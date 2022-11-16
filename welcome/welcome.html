@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xyz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .first_page {
+            width: fit-content;
+            text-align: center;
+            margin: 18% auto;
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.5rem;
+            color: gold;
+
+        }
+
+        .first_page .welcome {
+            font-size: 3rem;
+        }
+
+        #para {
+            position: absolute;
+            font-size: 1rem;
+            right: 5px;
+            bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="first_page">
+        <div class="welcome">Welcome To</div>
+        <br>
+        <div class="hospital_name">Hospital Name</div>
+        <div id="para"></div>
+
+    </div>
+    <script>
+        var seconds = 8;
+        function timerCounter() {
+            seconds--;
+            document.getElementById("para").innerText = `the page will reload after ${seconds} seconds`;
+        }
+        setInterval(timerCounter, 1000);
+        setTimeout(function () {
+            window.location = "../validation/main.html";
+        }, 8000);
+
+    </script>
+</body>
+
+</html>

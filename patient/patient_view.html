@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        #demo {
+            font-family: 'Libre Baskerville', serif;
+            position: relative;
+            margin-top: -50%;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            height: 100%;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1%;
+            margin: 5% 0;
+        }
+
+        .card {
+            overflow: hidden;
+            padding: 20px;
+            background-color: #FFF;
+            border-radius: 30px;
+            text-align: center;
+        }
+
+
+        .card_img img {
+            width: 80%;
+            height: 200px;
+            border-radius: 20px;
+        }
+
+        .card_body {
+            padding: 26px 20px 36px 20px;
+        }
+
+
+
+
+        a.read_more {
+            color: #FFF;
+            font-size: 13px;
+            text-decoration: none;
+            letter-spacing: 1.1px;
+            background: #0F1616;
+            margin-top: 50px;
+            padding: 24px 0px;
+            border-radius: 15px;
+            display: inline-block;
+            width: 70%;
+            transition: all .3s ease-in-out;
+        }
+
+        a.read_more:hover {
+            box-shadow: 0px 1px 50px rgba(0, 0, 0, 0.15);
+            background: #404040;
+        }
+
+
+
+
+
+        @media only screen and (max-width: 1441px) and (min-width: 1025px) {
+            .container {
+                max-width: 80%;
+            }
+
+            .grid {
+                gap: 2%;
+            }
+
+            .card {
+                padding: 15px;
+            }
+
+            .card_body {
+                padding: 15px;
+            }
+
+
+
+            .card_body p {
+                font-size: 16px;
+            }
+
+            a.read_more {
+                padding: 19px 0;
+                width: 60%;
+                font-size: 11px;
+                margin-top: 30px;
+            }
+
+        }
+
+        @media only screen and (max-width: 1024px) {
+
+            .grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2%;
+            }
+
+        }
+            .container {
+                margin-top: -2%;
+                max-width: 90%;
+            }
+            .card_img img {
+                width: 70%;
+                height: 200px;
+            }
+        
+
+        @media only screen and (max-width: 425px) {
+            .container {
+                max-width: 80%;
+            }
+
+            .card {
+                padding: 20px 10px;
+            }
+
+            .card_body {
+                padding: 7px;
+            }
+
+
+            .card_img img {
+                width: 60%;
+            }
+
+            .card_body p {
+                font-size: 14px;
+            }
+
+            a.read_more {
+                padding: 15px 0;
+                margin-top: 20px;
+            }
+
+        }
+
+        #greeting {
+            color: rgb(142, 121, 0);
+            padding: 2rem;
+            /* background: #06d6a0; */
+            /* border-radius: 10px; */
+            font-size: 2rem;
+            /* color: #fff; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="greeting"></div>
+    <div class="container">
+        <div class="grid">
+            <div class="card">
+                <div class="card_img">
+                    <img src="meal.png" alt="">
+                </div>
+                <div class="card_body">
+
+                    <a href="#" class="read_more">Get Meal</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_img">
+                    <img src="medicine.png" alt="">
+                </div>
+                <div class="card_body">
+
+                    <a href="3a3f2abc98c70630418c6cb189adbc05.jpg" class="read_more">Medicine </a>
+                    <p id="demo"></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_img">
+                    <img src="nurse.png" alt="">
+                </div>
+                <div class="card_body">
+
+                    <a href="#" class="read_more">Call Nurse</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_img">
+                    <img src="call.png" alt="">
+                </div>
+                <div class="card_body">
+
+                    <a href="https://call.whatsapp.com/video/uDBDceBY4ojEdGuap0H3Hn" class="read_more">Request call from
+                        Doctor</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_img">
+                    <img src="issue.png" alt="">
+                </div>
+                <div class="card_body">
+
+                    <a href="#" class="read_more">Report a Problem</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+    </div>
+    <script>
+        const greeting = document.getElementById("greeting");
+        const hour = new Date().getHours();
+        const welcomeTypes = ["Good morning", "Good afternoon", "Good evening", " Good Night"];
+        let welcomeText = "";
+        console.log(hour);
+        if (hour > 0 && hour < 6) welcomeText = welcomeTypes[3] + ", Justin";
+        else if (hour > 6 && hour < 12) welcomeText = welcomeTypes[0] + ", Justin";
+        else if (hour > 12 && hour < 18) welcomeText = welcomeTypes[1] + ", Justin";
+        else if (hour > 18 && hour < 24) welcomeText = welcomeTypes[2] + ", Justin";
+
+        greeting.innerHTML = welcomeText;
+        var countDownDate = new Date("Nov 15, 2022 23:00:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="demo"
+            document.getElementById("demo").innerHTML = "Next Dose : " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
